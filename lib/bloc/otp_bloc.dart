@@ -23,27 +23,3 @@ class OtpBloc extends Bloc<OtpEvent, OtpState> {
     });
   }
 }
-
-// class OtpBloc extends Bloc<OtpEvent, OtpState> {
-//   OtpBloc() : super(OtpState(List.generate(4, (index) => "")));
-
-//   @override
-//   Stream<OtpState> mapEventToState(OtpEvent event) async* {
-//     if (event is OtpNumberEntered) {
-//       final currentState = state.otpDigits.toList();
-//       final emptyIndex = currentState.indexWhere((element) => element.isEmpty);
-//       if (emptyIndex >= 0) {
-//         currentState[emptyIndex] = event.number;
-//         yield OtpState(currentState);
-//       }
-//     } else if (event is OtpBackspacePressed) {
-//       final currentState = state.otpDigits.toList();
-//       final lastIndex =
-//           currentState.lastIndexWhere((element) => element.isNotEmpty);
-//       if (lastIndex >= 0) {
-//         currentState[lastIndex] = "";
-//         yield OtpState(currentState);
-//       }
-//     }
-//   }
-// }
